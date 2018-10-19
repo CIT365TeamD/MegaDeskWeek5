@@ -17,7 +17,7 @@ namespace MegaDesk_2_TammyDresen
         public int DrawerPrice { get; set; }
         public int RushPrice { get; set; }
         public Desk Desk = new Desk();
-        public int[,] RushFees = new int[3, 3];
+        
         #endregion
 
         // constants to avoid magic numbers
@@ -52,7 +52,7 @@ namespace MegaDesk_2_TammyDresen
             Desk.Finish = finish;
             // calculate desk area.
             Desk.Area = width * depth;
-            RushFees = GetRushOrder(RUSHFEES);
+            
             QuotePrice = quotePrice;
         }
         // populate rushOrder array
@@ -124,6 +124,8 @@ namespace MegaDesk_2_TammyDresen
         // calculate rush fee based on surface area and speed
         public int RushFee()
         {
+            int[,] RushFees = new int[3, 3];
+            RushFees = GetRushOrder(RUSHFEES);
             // set size index based on surface area
             int sizeIndex = 0;
             int rush = 0;
@@ -172,6 +174,11 @@ namespace MegaDesk_2_TammyDresen
         public int Drawers;
         public Materials Finish;
         public int Area;
+
+        public const int MAX_WIDTH = 96;
+        public const int MIN_WIDTH = 24;
+        public const int MIN_DEPTH = 12;
+        public const int MAX_DEPTH = 48;
     }*/
 
 }

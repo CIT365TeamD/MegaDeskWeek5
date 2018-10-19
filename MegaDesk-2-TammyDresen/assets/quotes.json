@@ -7,23 +7,6 @@
       "Finish": 50,
       "Area": 288
     },
-    "RushFees": [
-      [
-        60,
-        70,
-        80
-      ],
-      [
-        40,
-        50,
-        60
-      ],
-      [
-        30,
-        35,
-        40
-      ]
-    ],
     "CustomerName": "test5",
     "QuoteDate": "2018-10-18T14:33:57.5999476-07:00",
     "TurnAround": 14,
@@ -40,23 +23,6 @@
       "Finish": 100,
       "Area": 2280
     },
-    "RushFees": [
-      [
-        60,
-        70,
-        80
-      ],
-      [
-        40,
-        50,
-        60
-      ],
-      [
-        30,
-        35,
-        40
-      ]
-    ],
     "CustomerName": "test6",
     "QuoteDate": "2018-10-18T14:36:06.1478369-07:00",
     "TurnAround": 7,
@@ -73,23 +39,6 @@
       "Finish": 150,
       "Area": 620
     },
-    "RushFees": [
-      [
-        60,
-        70,
-        80
-      ],
-      [
-        40,
-        50,
-        60
-      ],
-      [
-        30,
-        35,
-        40
-      ]
-    ],
     "CustomerName": "Test 6",
     "QuoteDate": "2018-10-18T15:08:44.8552995-07:00",
     "TurnAround": 5,
@@ -106,23 +55,6 @@
       "Finish": 200,
       "Area": 1026
     },
-    "RushFees": [
-      [
-        60,
-        70,
-        80
-      ],
-      [
-        40,
-        50,
-        60
-      ],
-      [
-        30,
-        35,
-        40
-      ]
-    ],
     "CustomerName": "Test 7",
     "QuoteDate": "2018-10-18T15:09:17.3608326-07:00",
     "TurnAround": 3,
@@ -139,23 +71,6 @@
       "Finish": 300,
       "Area": 1485
     },
-    "RushFees": [
-      [
-        60,
-        70,
-        80
-      ],
-      [
-        40,
-        50,
-        60
-      ],
-      [
-        30,
-        35,
-        40
-      ]
-    ],
     "CustomerName": "Test 8",
     "QuoteDate": "2018-10-18T15:09:37.3400744-07:00",
     "TurnAround": 14,
@@ -172,23 +87,6 @@
       "Finish": 50,
       "Area": 2280
     },
-    "RushFees": [
-      [
-        60,
-        70,
-        80
-      ],
-      [
-        40,
-        50,
-        60
-      ],
-      [
-        30,
-        35,
-        40
-      ]
-    ],
     "CustomerName": "Test 9",
     "QuoteDate": "2018-10-18T15:09:57.7379253-07:00",
     "TurnAround": 7,
@@ -205,23 +103,6 @@
       "Finish": 100,
       "Area": 4277
     },
-    "RushFees": [
-      [
-        60,
-        70,
-        80
-      ],
-      [
-        40,
-        50,
-        60
-      ],
-      [
-        30,
-        35,
-        40
-      ]
-    ],
     "CustomerName": "Test 10",
     "QuoteDate": "2018-10-18T15:10:25.8072803-07:00",
     "TurnAround": 5,
@@ -238,23 +119,6 @@
       "Finish": 300,
       "Area": 4608
     },
-    "RushFees": [
-      [
-        60,
-        70,
-        80
-      ],
-      [
-        40,
-        50,
-        60
-      ],
-      [
-        30,
-        35,
-        40
-      ]
-    ],
     "CustomerName": "Test 11",
     "QuoteDate": "2018-10-18T15:10:43.7391841-07:00",
     "TurnAround": 3,
@@ -271,23 +135,6 @@
       "Finish": 300,
       "Area": 3408
     },
-    "RushFees": [
-      [
-        60,
-        70,
-        80
-      ],
-      [
-        40,
-        50,
-        60
-      ],
-      [
-        30,
-        35,
-        40
-      ]
-    ],
     "CustomerName": "Tammy",
     "QuoteDate": "2018-10-19T08:11:19.9125236-07:00",
     "TurnAround": 3,
@@ -304,27 +151,74 @@
       "Finish": 150,
       "Area": 336
     },
-    "RushFees": [
-      [
-        60,
-        70,
-        80
-      ],
-      [
-        40,
-        50,
-        60
-      ],
-      [
-        30,
-        35,
-        40
-      ]
-    ],
     "CustomerName": "Tammy",
     "QuoteDate": "2018-10-19T08:12:53.3026008-07:00",
     "TurnAround": 7,
     "QuotePrice": 380,
+    "DeskPrice": 0,
+    "DrawerPrice": 0,
+    "RushPrice": 0
+  },
+  {
+    "Desk": {
+      "Width": 24,
+      "Depth": 12,
+      "Drawers": 0,
+      "Finish": 50,
+      "Area": 288
+    },
+    "CustomerName": "Tammy",
+    "QuoteDate": "2018-10-19T08:39:26.6793076-07:00",
+    "TurnAround": 14,
+    "QuotePrice": 250,
+    "DeskPrice": 0,
+    "DrawerPrice": 0,
+    "RushPrice": 0
+  },
+  {
+    "Desk": {
+      "Width": 24,
+      "Depth": 12,
+      "Drawers": 0,
+      "Finish": 50,
+      "Area": 288
+    },
+    "CustomerName": "Tammy",
+    "QuoteDate": "2018-10-19T09:27:44.6722151-07:00",
+    "TurnAround": 5,
+    "QuotePrice": 290,
+    "DeskPrice": 0,
+    "DrawerPrice": 0,
+    "RushPrice": 0
+  },
+  {
+    "Desk": {
+      "Width": 24,
+      "Depth": 12,
+      "Drawers": 0,
+      "Finish": 150,
+      "Area": 288
+    },
+    "CustomerName": "Joe",
+    "QuoteDate": "2018-10-19T09:29:32.1677227-07:00",
+    "TurnAround": 7,
+    "QuotePrice": 380,
+    "DeskPrice": 0,
+    "DrawerPrice": 0,
+    "RushPrice": 0
+  },
+  {
+    "Desk": {
+      "Width": 24,
+      "Depth": 12,
+      "Drawers": 0,
+      "Finish": 50,
+      "Area": 288
+    },
+    "CustomerName": "Jane",
+    "QuoteDate": "2018-10-19T09:32:57.144292-07:00",
+    "TurnAround": 7,
+    "QuotePrice": 280,
     "DeskPrice": 0,
     "DrawerPrice": 0,
     "RushPrice": 0
