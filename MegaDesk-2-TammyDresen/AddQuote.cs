@@ -183,10 +183,16 @@ namespace MegaDesk_2_TammyDresen
                     }
                 }*/
                 // output the price quote to the screen along with the original user input 
+                //DisplayQuote displayQuote = new DisplayQuote(NewQuote)
+                //{ Tag = this };
+                //displayQuote.Show(this);
+                //Hide();
+
+                var MainMenu = (MainMenu)Tag;
                 DisplayQuote displayQuote = new DisplayQuote(NewQuote)
-                { Tag = this };
-                displayQuote.Show(this);
-                Hide();
+                { Tag = MainMenu };
+                displayQuote.Show();
+                this.Close();
             }
             catch (Exception)
             {

@@ -25,8 +25,11 @@ namespace MegaDesk_2_TammyDresen
 
         private void BtnDisplayCancel_Click(object sender, EventArgs e)
         {
-            var addQuote = (AddQuote)Tag;
-            addQuote.Show();
+            //var addQuote = (AddQuote)Tag;
+            //addQuote.Show();
+            //this.Close();
+            var MainMenu = (MainMenu)Tag;
+            MainMenu.Show();
             this.Close();
         }
 

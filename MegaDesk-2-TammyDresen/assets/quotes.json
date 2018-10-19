@@ -222,5 +222,37 @@
     "DeskPrice": 0,
     "DrawerPrice": 0,
     "RushPrice": 0
+  },
+  {
+    "Desk": {
+      "Width": 24,
+      "Depth": 12,
+      "Drawers": 0,
+      "Finish": 150,
+      "Area": 288
+    },
+    "CustomerName": "Tammy",
+    "QuoteDate": "2018-10-19T10:37:28.0847735-07:00",
+    "TurnAround": 7,
+    "QuotePrice": 380,
+    "DeskPrice": 0,
+    "DrawerPrice": 0,
+    "RushPrice": 0
+  },
+  {
+    "Desk": {
+      "Width": 24,
+      "Depth": 12,
+      "Drawers": 0,
+      "Finish": 50,
+      "Area": 288
+    },
+    "CustomerName": "Tammy",
+    "QuoteDate": "2018-10-19T10:39:59.4808747-07:00",
+    "TurnAround": 7,
+    "QuotePrice": 280,
+    "DeskPrice": 0,
+    "DrawerPrice": 0,
+    "RushPrice": 0
   }
 ]
