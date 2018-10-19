@@ -8,8 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Newtonsoft.Json;
 
-namespace MegaDesk_5_TammyDresen
+namespace MegaDesk_2_TammyDresen
 {
     public partial class AddQuote : Form
     {
@@ -20,8 +21,10 @@ namespace MegaDesk_5_TammyDresen
         int DeskDepth = 0;
         int Drawers = 0;
         Materials Finish;
-        int RushDays = 0;
+        int RushDays = 14;
         int QuotePrice = 0;
+        private const string JSON = @"../../assets/quotes.json";
+        DateTime Date = DateTime.Now;
 
         #endregion
 
@@ -125,17 +128,44 @@ namespace MegaDesk_5_TammyDresen
                 Drawers = int.Parse(userDrawers.Text);
                 Finish = (Materials)materialComboBox.SelectedValue;
                 RushDays = int.Parse(userSpeed.Text);
+                Date = DateTime.Now;
+                
 
                 // instantiate new deskQuote
-                DeskQuote NewQuote = new DeskQuote(DeskWidth, DeskDepth, Drawers, Finish, RushDays, CustomerName);
+                DeskQuote NewQuote = new DeskQuote(CustomerName, DeskWidth, DeskDepth, Drawers, Finish, RushDays, QuotePrice, Date);
                 // Save the Quote Price
                 QuotePrice = NewQuote.CalculateQuotePrice();
 
                 // store the user input, the quote amount, and the date of the quote
                 // create CSV string
-                string csvString = CustomerName + "," + DeskWidth + "," + DeskDepth + "," + Drawers + "," +
-                    Finish + "," + RushDays + "," + QuotePrice + "," + DateTime.Now;
-                string csvFile = @"quotes.txt";
+                /*string csvString = CustomerName + "," + DeskWidth + "," + DeskDepth + "," + Drawers + "," +
+                    Finish + "," + RushDays + "," + QuotePrice + "," + DateTime.Now;*/
+                var convertedJson = "";
+                if (!File.Exists(JSON))
+                {
+                    List<DeskQuote> list = new List<DeskQuote>
+                    {
+                        new DeskQuote(CustomerName, DeskWidth, DeskDepth, Drawers, Finish, RushDays, QuotePrice, Date)
+                    };
+                    convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
+                }
+                else
+                {
+                    using (StreamReader sr = File.OpenText(JSON))
+                    {
+                        string json = sr.ReadToEnd();
+                        var list = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
+                    
+                        list.Add(new DeskQuote(CustomerName, DeskWidth, DeskDepth, Drawers, Finish, RushDays, QuotePrice, Date));
+                        convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
+                    }
+                    
+                }
+                using (StreamWriter sw = File.CreateText(JSON))
+                {
+                    sw.Write(convertedJson);
+                }
+                /*string csvFile = @"quotes.txt";
                 // check if file exists. If no, create file
                 if (!File.Exists(csvFile))
                 {
@@ -151,7 +181,7 @@ namespace MegaDesk_5_TammyDresen
                     {
                         sw.WriteLine(csvString);
                     }
-                }
+                }*/
                 // output the price quote to the screen along with the original user input 
                 DisplayQuote displayQuote = new DisplayQuote(NewQuote)
                 { Tag = this };
@@ -162,6 +192,7 @@ namespace MegaDesk_5_TammyDresen
             {
 
                 MessageBox.Show("Please fill in all fields.");
+               
                 // validate fields
                 if (CustomerName == "")
                 {
@@ -186,6 +217,7 @@ namespace MegaDesk_5_TammyDresen
                 this.Show();
             }
 
+            
             {
 
 
@@ -193,6 +225,8 @@ namespace MegaDesk_5_TammyDresen
 
             
         }
+
+       
 
         private string ToString(object selectedItem)
         {

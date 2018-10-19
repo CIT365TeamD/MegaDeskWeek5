@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MegaDesk_5_TammyDresen.Properties {
+namespace MegaDesk_2_TammyDresen.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

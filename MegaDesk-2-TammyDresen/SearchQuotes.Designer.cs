@@ -1,4 +1,4 @@
-﻿namespace MegaDesk_5_TammyDresen
+﻿namespace MegaDesk_2_TammyDresen
 {
     partial class SearchQuotes
     {

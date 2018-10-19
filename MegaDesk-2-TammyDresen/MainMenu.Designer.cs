@@ -1,4 +1,4 @@
-﻿namespace MegaDesk_5_TammyDresen
+﻿namespace MegaDesk_2_TammyDresen
 {
     partial class MainMenu
     {
@@ -97,7 +97,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::MegaDesk_5_TammyDresen.Properties.Resources.desk;
+            this.pictureBox1.Image = global::MegaDesk_2_TammyDresen.Properties.Resources.desk;
             this.pictureBox1.Location = new System.Drawing.Point(56, 114);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(360, 200);

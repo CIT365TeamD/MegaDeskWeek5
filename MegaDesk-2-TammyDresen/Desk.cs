@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MegaDesk_5_TammyDresen
+namespace MegaDesk_2_TammyDresen
 {
+   
     public class Desk
     {
         // This class will define the attributes of the desk object with width, depth,
@@ -26,7 +27,7 @@ namespace MegaDesk_5_TammyDresen
         public const int MAX_DEPTH = 48;
         #endregion
 
-    }
+    } 
     // enum is outside of desk class, but stored inside the file.
     public enum Materials
     {

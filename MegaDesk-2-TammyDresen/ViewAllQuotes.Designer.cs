@@ -1,4 +1,4 @@
-﻿namespace MegaDesk_5_TammyDresen
+﻿namespace MegaDesk_2_TammyDresen
 {
     partial class ViewAllQuotes
     {
@@ -31,7 +31,7 @@
         {
             this.btnAllCancel = new System.Windows.Forms.Button();
             this.lblQuotes = new System.Windows.Forms.Label();
-            this.QuoteListView = new System.Windows.Forms.ListView();
+            this.AllResultsList = new System.Windows.Forms.ListView();
             this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colWidth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colDepth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -52,7 +52,7 @@
             this.btnAllCancel.TabIndex = 0;
             this.btnAllCancel.Text = "Main Menu";
             this.btnAllCancel.UseVisualStyleBackColor = false;
-            this.btnAllCancel.Click += new System.EventHandler(this.btnAllCancel_Click);
+            this.btnAllCancel.Click += new System.EventHandler(this.BtnAllCancel_Click);
             // 
             // lblQuotes
             // 
@@ -64,9 +64,9 @@
             this.lblQuotes.TabIndex = 1;
             this.lblQuotes.Text = "All Quotes";
             // 
-            // QuoteListView
+            // AllResultsList
             // 
-            this.QuoteListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.AllResultsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colName,
             this.colWidth,
             this.colDepth,
@@ -75,15 +75,15 @@
             this.colSpeed,
             this.colPrice,
             this.colDate});
-            this.QuoteListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QuoteListView.FullRowSelect = true;
-            this.QuoteListView.GridLines = true;
-            this.QuoteListView.Location = new System.Drawing.Point(55, 74);
-            this.QuoteListView.Name = "QuoteListView";
-            this.QuoteListView.Size = new System.Drawing.Size(650, 304);
-            this.QuoteListView.TabIndex = 2;
-            this.QuoteListView.UseCompatibleStateImageBehavior = false;
-            this.QuoteListView.View = System.Windows.Forms.View.Details;
+            this.AllResultsList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AllResultsList.FullRowSelect = true;
+            this.AllResultsList.GridLines = true;
+            this.AllResultsList.Location = new System.Drawing.Point(55, 74);
+            this.AllResultsList.Name = "AllResultsList";
+            this.AllResultsList.Size = new System.Drawing.Size(650, 304);
+            this.AllResultsList.TabIndex = 2;
+            this.AllResultsList.UseCompatibleStateImageBehavior = false;
+            this.AllResultsList.View = System.Windows.Forms.View.Details;
             // 
             // colName
             // 
@@ -135,7 +135,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(764, 461);
-            this.Controls.Add(this.QuoteListView);
+            this.Controls.Add(this.AllResultsList);
             this.Controls.Add(this.lblQuotes);
             this.Controls.Add(this.btnAllCancel);
             this.Name = "ViewAllQuotes";
@@ -150,7 +150,7 @@
 
         private System.Windows.Forms.Button btnAllCancel;
         private System.Windows.Forms.Label lblQuotes;
-        private System.Windows.Forms.ListView QuoteListView;
+        private System.Windows.Forms.ListView AllResultsList;
         private System.Windows.Forms.ColumnHeader colName;
         private System.Windows.Forms.ColumnHeader colWidth;
         private System.Windows.Forms.ColumnHeader colDepth;

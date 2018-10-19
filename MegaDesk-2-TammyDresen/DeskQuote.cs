@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace MegaDesk_5_TammyDresen
+namespace MegaDesk_2_TammyDresen
 {
     public class DeskQuote
     {
@@ -17,6 +17,7 @@ namespace MegaDesk_5_TammyDresen
         public int DrawerPrice { get; set; }
         public int RushPrice { get; set; }
         public Desk Desk = new Desk();
+        public int[,] RushFees = new int[3, 3];
         #endregion
 
         // constants to avoid magic numbers
@@ -26,22 +27,22 @@ namespace MegaDesk_5_TammyDresen
         private const int PRICE_SQ_FOOT = 1;
         private const int BASE_SIZE = 1000;
         private const int UPPER_SIZE = 2000;
+        private const string RUSHFEES = @"../../assets/rushOrderPrices.txt";
         // rush fee array
-        private readonly int[,] RUSH_FEE = new int[3, 3]
+        /*private int[,] RUSH_FEE = new int[3, 3]
             {
                 { 60, 70, 80 },
                 { 40, 50, 60 },
                 { 30, 35, 40 }
-            };
+            };*/
         #endregion
 
         // constructor creates new quote
-        public DeskQuote(int width, int depth, int drawers, Materials finish,
-            int rushDays, string name)
+        public DeskQuote(string name, int width, int depth, int drawers, Materials finish, int rushDays, int quotePrice, DateTime date)
         {
             // save name and date to quote
             CustomerName = name;
-            QuoteDate = DateTime.Now.Date;
+            QuoteDate = date;
             // save inputs to desk object
             Desk.Width = width;
             Desk.Depth = depth;
@@ -50,9 +51,43 @@ namespace MegaDesk_5_TammyDresen
             //Desk.Finish = (Materials)Enum.Parse(typeof(Materials), finish);
             Desk.Finish = finish;
             // calculate desk area.
-            Desk.Area = width * depth;         
+            Desk.Area = width * depth;
+            RushFees = GetRushOrder(RUSHFEES);
+            QuotePrice = quotePrice;
         }
+        // populate rushOrder array
+        public int[,] GetRushOrder(string path)
+        {
+            try
+            {
+                int[,] rushArray = new int[3, 3];
+                
+                using (StreamReader sr = File.OpenText(@path))
+                {
+                    string[] sa = new string[9] ;
+                    int k = 0;
+                    sa = File.ReadAllLines(@path);
+                    for (int i = 0; i < 3; i++)
+                    {
+                        for (int j = 0; j < 3; j++)
+                        {
+                            
+                            rushArray[i, j] = int.Parse(sa[k]);
+                            k++;
+                        }
+                        // use for loop to save info into array.
 
+                    }
+                }
+                    return rushArray;
+            }
+            catch (Exception)
+            {
+                Console.Write("Rush Fee file not working.");
+                throw;
+            }
+           
+        }
         // calculate quote price
         public int CalculateQuotePrice()
         {
@@ -107,16 +142,16 @@ namespace MegaDesk_5_TammyDresen
             // return rush fee based on sizeIndex and speed
             if (TurnAround == 3)
             {
-                rush = RUSH_FEE[0, sizeIndex];
+                rush = RushFees[0, sizeIndex];
 
             }
             else if (TurnAround == 5)
             {
-                rush = RUSH_FEE[1, sizeIndex];
+                rush = RushFees[1, sizeIndex];
             }
             else if (TurnAround == 7)
             {
-                rush = RUSH_FEE[2, sizeIndex];
+                rush = RushFees[2, sizeIndex];
             }
             else
             {
@@ -130,4 +165,13 @@ namespace MegaDesk_5_TammyDresen
         
         
     }
+    /* public struct Desk
+    {
+        public int Width;
+        public int Depth;
+        public int Drawers;
+        public Materials Finish;
+        public int Area;
+    }*/
+
 }
